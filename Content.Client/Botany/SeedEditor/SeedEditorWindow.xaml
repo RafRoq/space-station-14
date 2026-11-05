@@ -1,0 +1,49 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                      xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                      Title="{Loc 'seed-editor-title'}"
+                      MinSize="760 520"
+                      SetSize="900 680">
+    <BoxContainer Orientation="Horizontal"
+                  Margin="6"
+                  SeparationOverride="8">
+
+        <!-- Species list -->
+        <BoxContainer Orientation="Vertical"
+                      MinWidth="230"
+                      SeparationOverride="4">
+            <LineEdit Name="SpeciesSearch"
+                      PlaceHolder="{Loc 'seed-editor-search-species'}" />
+            <ItemList Name="SpeciesList"
+                      SelectMode="Single"
+                      VerticalExpand="True" />
+        </BoxContainer>
+
+        <!-- Seed being edited -->
+        <BoxContainer Orientation="Vertical"
+                      HorizontalExpand="True"
+                      SeparationOverride="4">
+            <Label Name="SpeciesName"
+                   StyleClasses="LabelHeading"
+                   Text="{Loc 'seed-editor-no-species'}" />
+            <ScrollContainer VerticalExpand="True"
+                             HScrollEnabled="False">
+                <BoxContainer Name="Sections"
+                              Orientation="Vertical"
+                              SeparationOverride="10"
+                              Margin="0 0 8 0" />
+            </ScrollContainer>
+            <Label Name="ResultLabel"
+                   Visible="False" />
+            <BoxContainer Orientation="Horizontal"
+                          SeparationOverride="4">
+                <Button Name="ResetButton"
+                        Text="{Loc 'seed-editor-reset'}"
+                        Disabled="True" />
+                <Control HorizontalExpand="True" />
+                <Button Name="SpawnButton"
+                        Text="{Loc 'seed-editor-spawn'}"
+                        Disabled="True" />
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>
